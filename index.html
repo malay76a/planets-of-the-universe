@@ -5,8 +5,21 @@ layout: default
 <h1>Planets of the Universe</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-<h2>Recently Discovered Planets</h2>
+<h2>Planet type</h2>
 
+<ol>
+
+  {% for planet in site.data.planet-types %}
+  <li>
+    <a href="{{site.baseurl}}{{planet.url}}">{{planet.title}}</a>
+    {{planet.content | markdownify}}
+  </li>
+  {% endfor %}
+
+</ol>
+
+
+<h2>Recently Discovered Planets</h2>
 
 <ul>
   {% for news in site.categories.recently-discovered limit:2 %}
